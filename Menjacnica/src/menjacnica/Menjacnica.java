@@ -10,8 +10,14 @@ public class Menjacnica implements InterfejsMenjacnica {
 
 	@Override
 	public void dodajKurs(String naziv, double kursS, double kursP, double kursK, GregorianCalendar datum) {
-		// TODO Auto-generated method stub
+		Valuta nova = new Valuta();
+		nova.setDatum(datum);
+		nova.setNaziv(naziv);
+		nova.setKursKupovni(kursK);
+		nova.setKursProdajni(kursP);
+		nova.setKursSrednji(kursS);
 		
+		valute.add(nova);
 	}
 
 	@Override
