@@ -45,6 +45,59 @@ public class Valuta {
 	public void setDatum(GregorianCalendar datum) {
 		this.datum = datum;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((datum == null) ? 0 : datum.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(kursKupovni);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(kursProdajni);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(kursSrednji);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((naziv == null) ? 0 : naziv.hashCode());
+		result = prime * result + ((skracenica == null) ? 0 : skracenica.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Valuta other = (Valuta) obj;
+		if (datum == null) {
+			if (other.datum != null)
+				return false;
+		} else if (!datum.equals(other.datum))
+			return false;
+		if (Double.doubleToLongBits(kursKupovni) != Double.doubleToLongBits(other.kursKupovni))
+			return false;
+		if (Double.doubleToLongBits(kursProdajni) != Double.doubleToLongBits(other.kursProdajni))
+			return false;
+		if (Double.doubleToLongBits(kursSrednji) != Double.doubleToLongBits(other.kursSrednji))
+			return false;
+		if (naziv == null) {
+			if (other.naziv != null)
+				return false;
+		} else if (!naziv.equals(other.naziv))
+			return false;
+		if (skracenica == null) {
+			if (other.skracenica != null)
+				return false;
+		} else if (!skracenica.equals(other.skracenica))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Valuta [naziv=" + naziv + ", skracenica=" + skracenica + ", kursSrednji=" + kursSrednji
+				+ ", kursKupovni=" + kursKupovni + ", kursProdajni=" + kursProdajni + ", datum=" + datum + "]";
+	}
 	
 	
 	
