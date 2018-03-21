@@ -13,30 +13,37 @@ public class Valuta {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		
+		if(naziv != null  &&  !naziv.isEmpty())
 		this.naziv = naziv;
+		
 	}
 	public String getSkracenica() {
 		return skracenica;
 	}
 	public void setSkracenica(String skracenica) {
+		if(skracenica != null  &&  !skracenica.isEmpty())
 		this.skracenica = skracenica;
 	}
 	public double getKursSrednji() {
 		return kursSrednji;
 	}
 	public void setKursSrednji(double kursSrednji) {
+		if(kursSrednji > 0)
 		this.kursSrednji = kursSrednji;
 	}
 	public double getKursKupovni() {
 		return kursKupovni;
 	}
 	public void setKursKupovni(double kursKupovni) {
+		if(kursKupovni > 0)
 		this.kursKupovni = kursKupovni;
 	}
 	public double getKursProdajni() {
 		return kursProdajni;
 	}
 	public void setKursProdajni(double kursProdajni) {
+		if(kursProdajni > 0)
 		this.kursProdajni = kursProdajni;
 	}
 	public GregorianCalendar getDatum() {
